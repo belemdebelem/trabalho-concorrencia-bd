@@ -309,13 +309,16 @@ O sistema evita sobrescrita concorrente e mantém a integridade dos dados.
 
 ## Parte 1 — Sem Controle
 
-> Inserir aqui print do JMeter demonstrando saldo inconsistente e requisições simultâneas.
+> ![print1](print1.png)
+> ![print2](print2.png)
 
 ---
 
 ## Parte 2 — Com @Version
 
-> Inserir aqui print do JMeter demonstrando erros `409 Conflict` e controle otimista funcionando.
+> ![print3](print3.png)
+> ![print4](print4.png)
+> ![print5](print5.png)
 
 ---
 
