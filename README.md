@@ -344,11 +344,21 @@ src/main/java/com/exemplo/concorrencia/
 
 ---
 
-## Cenário 2 — Conta Com @Version
+## 📸 Evidências dos Testes (Prints)
 
-* Parte das requisições retorna `409 Conflict`
-* O saldo final permanece correto
-* Demonstra o funcionamento do controle otimista
+Esta seção deve ser preenchida com as capturas de tela obtidas durante a execução no JMeter.
+
+### Parte 1 — Sem Controle (Lost Update)
+*   **Comportamento:** Todas as requisições retornam sucesso (200 OK), mas o saldo final é inconsistente.
+*   **Print esperado:** Exibir a "Árvore de Resultados" do JMeter com tudo verde e o saldo final incorreto.
+
+> **[INSERIR PRINT AQUI]**
+
+### Parte 2 — Com @Version (Controle Otimista)
+*   **Comportamento:** Ocorrência de erros HTTP 409 Conflict. O saldo final é consistente com os sucessos.
+*   **Print esperado:** Exibir a "Árvore de Resultados" do JMeter com erros 409 e o saldo final correto.
+
+> **[INSERIR PRINT AQUI]**
 
 ---
 
