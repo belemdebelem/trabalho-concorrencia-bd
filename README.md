@@ -104,7 +104,7 @@ Dessa forma:
 ### 1. Clonar o repositório
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/belemdebelem/trabalho-concorrencia-bd.git
 ```
 
 ---
@@ -112,7 +112,7 @@ git clone URL_DO_REPOSITORIO
 ### 2. Entrar na pasta do projeto
 
 ```bash
-cd nome-do-projeto
+cd trabalho-concorrencia-bd
 ```
 
 ---
