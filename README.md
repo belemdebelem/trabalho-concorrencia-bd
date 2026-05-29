@@ -22,7 +22,7 @@ Responsável por:
 * Análise do problema de Lost Update
 * Testes de inconsistência de saldo
 
-## Stherfanny
+## Stefanie Borges
 
 Responsável por:
 
