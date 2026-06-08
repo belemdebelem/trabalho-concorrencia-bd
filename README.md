@@ -347,9 +347,8 @@ src/main/java/com/exemplo/concorrencia/
 
 ---
 
-## 📸 Evidências dos Testes e Análise Comparativa
+##  Análise Comparativa
 
-Esta seção documenta o comportamento do sistema sob estresse, utilizando 50 requisições simultâneas para simular concorrência.
 
 ### Parte 1 — Sem Controle (Lost Update)
 Neste cenário, todas as transações tentam ler e gravar o saldo ao mesmo tempo sem nenhuma restrição.
@@ -357,7 +356,6 @@ Neste cenário, todas as transações tentam ler e gravar o saldo ao mesmo tempo
 *   **Comportamento Observado:** O JMeter registra **0% de erros**, ou seja, todas as 50 requisições retornaram `HTTP 200 OK`.
 *   **Problema Gerado:** Apesar do falso sucesso, o banco de dados sofreu **Lost Update (Atualização Perdida)**. O saldo final não bate com a soma real das transações (ex: esperado R$ 1500, obtido R$ 1050), pois as transações simultâneas sobrescreveram os dados umas das outras.
 
-> **[INSERIR PRINT AQUI: Árvore de Resultados do JMeter verde + Saldo Inconsistente]**
 
 ### Parte 2 — Com @Version (Controle Otimista)
 Neste cenário, a anotação `@Version` do JPA adiciona uma coluna de versão ao registro. Se a versão no banco mudar entre a leitura e a escrita, o sistema rejeita a alteração.
@@ -365,10 +363,7 @@ Neste cenário, a anotação `@Version` do JPA adiciona uma coluna de versão ao
 *   **Comportamento Observado:** O JMeter registra uma alta taxa de falhas. As requisições rejeitadas retornam **`HTTP 409 Conflict`**.
 *   **Solução Atingida:** Ao contrário da Parte 1, o saldo final permanece **estritamente consistente**. O banco de dados só aceita depósitos baseados na versão mais recente, forçando as threads concorrentes a falharem com segurança ao invés de corromperem o saldo.
 
-> **[INSERIR PRINT AQUI: Árvore de Resultados do JMeter com erros 409 Conflict + Saldo Consistente]**
+
 
 ---
 
-# 📚 Finalidade Acadêmica
-
-Projeto desenvolvido exclusivamente para fins acadêmicos e estudo de concorrência em sistemas transacionais utilizando Spring Boot e JPA/Hibernate.
